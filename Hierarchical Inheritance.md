@@ -1,100 +1,68 @@
-# Exp.No:25  
-## Hierarchical Inheritance
+
+# Exp.No:5d  
+## Multi-level Inheritance
 
 ---
 
 ### AIM  
-To write a Python program to get the employee and doctor details and display them using hierarchical inheritance. Create a parent (base) class named `Details` and two child (derived) classes named `Employee` and `Doctor`.
+To write a Python program to get the name, age, and ID of a person and display them using multilevel inheritance.
 
 ---
 
 ### ALGORITHM
 
-1. **Begin the program.**
-2. **Create a class Details** with an `__init__` method to initialize three attributes: `id`, `name`, and `gender`.
-3. **Define a method display_details()** to print the values of `id`, `name`, and `gender`.
-4. **Create a class Employee** that inherits from the `Details` class. 
-   - Add two additional attributes: `company` and `department`.
-   - Override the `display_details()` method to print the employee-specific attributes (`company` and `department`) along with the inherited details.
-5. **Create a class Doctor** that also inherits from the `Details` class. 
-   - Add two additional attributes: `hospital` and `department`.
-   - Override the `display_details()` method to print the doctor-specific attributes (`hospital` and `department`) along with the inherited details.
-6. **Accept input** for employee and doctor details.
-7. **Create objects of Employee and Doctor** using the input.
-8. **Call the `display_details()` method** for both objects to print the details.
-9. **Terminate the program.**
+1. Define the `Person` class:
+   - Inside the `Person` class, define the `__init__` method (constructor) with two parameters: `name` and `age`.
+   - Inside the `__init__` method, assign the `name` to `self.name` and `age` to `self.age`.
+
+2. Define the `PersonDetails` class that inherits from the `Person` class:
+   - Inside the `PersonDetails` class, define the `__init__` method (constructor) with three parameters: `name`, `age`, and `person_id`.
+   - Inside the `__init__` method, call the `__init__` method of the `Person` class using `super()` to initialize `name` and `age`.
+   - Assign `person_id` to `self.person_id`.
+
+3. Define the `DisplayDetails` class that inherits from the `PersonDetails` class:
+   - Inside the `DisplayDetails` class, define the `__init__` method (constructor) with three parameters: `name`, `age`, and `person_id`.
+   - Inside the `__init__` method, call the `__init__` method of the `PersonDetails` class using `super()` to initialize `name`, `age`, and `person_id`.
+
+4. Inside the `DisplayDetails` class, define the `show_details` method:
+   - Inside the `show_details` method, return a formatted string with `self.name`, `self.age`, and `self.person_id`.
+
+5. Prompt the user to enter `name` (string), `age` (integer), and `person_id` (integer).
+
+6. Create an instance `person` of the `DisplayDetails` class, passing `name`, `age`, and `person_id` to the constructor.
+
+7. Call the `show_details` method on the `person` object and print the result.
+
+8. Terminate the program.
 
 ---
 
 ### PROGRAM
-```
-#Reg_no: 212223060288
-#Name: Tharun Kumaran G
 
-class Details:
-    def __init__(self, id, name, gender):
-        self.id = id
-        self.name = name
-        self.gender = gender
-
-    def display_details(self):
-        print("ID:", self.id)
-        print("Name:", self.name)
-        print("Gender:", self.gender)
-
-class Employee(Details):
-    def __init__(self, id, name, gender, company, department):
-        super().__init__(id, name, gender)
-        self.company = company
-        self.department = department
-
-    def display_details(self):
-        super().display_details()
-        print("Company:", self.company)
-        print("Department:", self.department)
-
-class Doctor(Details):
-    def __init__(self, id, name, gender, hospital, department):
-        super().__init__(id, name, gender)
-        self.hospital = hospital
-        self.department = department
-
-    def display_details(self):
-        super().display_details()
-        print("Hospital:", self.hospital)
-        print("Department:", self.department)
-
-print("Enter Employee Details:")
-emp_id = input("ID: ")
-emp_name = input("Name: ")
-emp_gender = input("Gender: ")
-emp_company = input("Company: ")
-emp_department = input("Department: ")
-
-print("\nEnter Doctor Details:")
-doc_id = input("ID: ")
-doc_name = input("Name: ")
-doc_gender = input("Gender: ")
-doc_hospital = input("Hospital: ")
-doc_department = input("Department: ")
-
-employee = Employee(emp_id, emp_name, emp_gender, emp_company, emp_department)
-doctor = Doctor(doc_id, doc_name, doc_gender, doc_hospital, doc_department)
-
-print("\n--- Employee Details ---")
-employee.display_details()
-
-print("\n--- Doctor Details ---")
-doctor.display_details()
-
-
-
+```python
+class Person:
+    def getname(self,name):
+        self.name=name
+class Age(Person):
+    def getage(self,age):
+        self.age=age
+class Location(Age):
+    def getlocation(self,l):
+        self.l=l
+    def display(self):
+        print(f"{self.name} {self.age} {self.l}")
+n=input()
+a=int(input())
+l=input()
+g=Location()
+g.getname(n)
+g.getage(a)
+g.getlocation(l)
+g.display()
 ```
 
-### OUTPUT  
-
-![image](https://github.com/user-attachments/assets/3506037e-b28f-474b-945a-699c57597f0a)
+### OUTPUT
+<img width="1182" height="242" alt="image" src="https://github.com/user-attachments/assets/011e30c6-c664-4fdc-980e-f3e47c696ab3" />
 
 ### RESULT
-
-Thus, the python program to get the employee and doctor details and display them using hierarchical inheritance has been executed and verified successfully.
+Therefore, the output is the example to write a Python program to get the name, age, and ID of a person and display them using multilevel inheritance.
