@@ -1,4 +1,4 @@
-# Exp.No:23  
+# Exp.No:5e  
 ## Multiple Inheritance
 
 ---
@@ -31,43 +31,33 @@ To write a Python program to get the name, attendance, and ID of a student and c
 
 ### PROGRAM
 
-```
-#Reg_no: 212223060288
-#Name: Tharun Kumaran G
-
-class Student:
-    def __init__(self, name, student_id):
-        self.name = name
-        self.student_id = student_id
-
-    def get_student_info(self):
-        return f"Name: {self.name}, ID: {self.student_id}"
-
-class Attendance(Student):
-    def __init__(self, name, student_id, attendance):
-        super().__init__(name, student_id)
-        self.attendance = attendance
-
-    def check_eligibility(self):
-        if self.attendance > 80:
-            return f"{self.get_student_info()} -> Eligible for next module (Attendance: {self.attendance}%)"
+```python
+class student:
+    def info(self,n,i):
+        self.n=n
+        self.i=i
+        print(n)
+        print(i)
+class attendance:
+    def atten(self,a):
+        self.a=a
+class Eligible(student,attendance):
+    def check(self):
+        if self.a>75:
+            print("Eligible for Exam")
         else:
-            return f"{self.get_student_info()} -> Not eligible for next module (Attendance: {self.attendance}%)"
-
-name_input = input()
-id_input = int(input())
-attendance_input = int(input())
-
-student = Attendance(name_input, id_input, attendance_input)
-print("\n--- Eligibility Status ---")
-print(student.check_eligibility())
-
+            print("Not Eligible for Exam")
+n=input()
+i=int(input())
+a=int(input())
+g=Eligible()
+g.info(n,i)
+g.atten(a)
+g.check()
 ```
 
 ### OUTPUT
-
-![image](https://github.com/user-attachments/assets/3bc60cd6-6e75-417e-b890-be9050914684)
+<img width="1187" height="325" alt="image" src="https://github.com/user-attachments/assets/f6f736c8-edfc-4666-b255-ee4157f0f196" />
 
 ### RESULT
-
-Thus, the python program to get the name, attendance, and ID of a student and check if they are eligible for the next module using multiple inheritance has been executed and verified successfully.
+Therefore, the output is the example to write a Python program to get the name, attendance, and ID of a student and check if they are eligible for the next module using multiple inheritance. If attendance > 80, the student is eligible; otherwise, not eligible.
