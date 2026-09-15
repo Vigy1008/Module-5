@@ -1,4 +1,5 @@
-# Exp.No:24  
+
+# Exp.No:5d  
 ## Multi-level Inheritance
 
 ---
@@ -38,42 +39,30 @@ To write a Python program to get the name, age, and ID of a person and display t
 
 ### PROGRAM
 
-```
-#Reg_no: 212223060288
-#Name: Tharun Kumaran G
-
+```python
 class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-class PersonDetails(Person):
-    def __init__(self, name, age, person_id):
-        super().__init__(name, age)
-        self.person_id = person_id
-
-class DisplayDetails(PersonDetails):
-    def __init__(self, name, age, person_id):
-        super().__init__(name, age, person_id)
-
-    def show_details(self):
-        return f"Name: {self.name}\nAge: {self.age}\nID: {self.person_id}"
-
-name_input = input()
-age_input = int(input())
-id_input = int(input())
-
-person = DisplayDetails(name_input, age_input, id_input)
-
-print(person.show_details())
-
-
+    def getname(self,name):
+        self.name=name
+class Age(Person):
+    def getage(self,age):
+        self.age=age
+class Location(Age):
+    def getlocation(self,l):
+        self.l=l
+    def display(self):
+        print(f"{self.name} {self.age} {self.l}")
+n=input()
+a=int(input())
+l=input()
+g=Location()
+g.getname(n)
+g.getage(a)
+g.getlocation(l)
+g.display()
 ```
 
 ### OUTPUT
-
-![image](https://github.com/user-attachments/assets/7b4230e6-eb29-419c-9660-3c0f1ca760af)
+<img width="1182" height="242" alt="image" src="https://github.com/user-attachments/assets/011e30c6-c664-4fdc-980e-f3e47c696ab3" />
 
 ### RESULT
-
-Thus, the python program to get the name, age, and ID of a person and display them using multilevel inheritance has been executed and verified successfully.
+Therefore, the output is the example to write a Python program to get the name, age, and ID of a person and display them using multilevel inheritance.
